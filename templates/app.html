@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Estate Price Prediction</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS & JS -->
+    <link rel="stylesheet" href="Frontend/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="Frontend/app.js"></script>
+
+    <!-- Basic Styling -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin: 20px 0;
+        }
+        label, select, input[type="text"] {
+            display: block;
+            width: 100%;
+            font-size: 16px;
+        }
+        .switch-field {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .switch-field input {
+            display: none;
+        }
+        .switch-field label {
+            background-color: #e4e4e4;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .switch-field input:checked + label {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .submit {
+            background-color: #007BFF;
+            color: white;
+            font-size: 18px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 30px auto 10px;
+            display: block;
+        }
+        .submit:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            text-align: center;
+            font-size: 20px;
+            color: #222;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Real Estate Price Prediction</h1>
+    
+    <div class="form-group">
+        <h2>Location</h2>
+        <select class="location" id="uiLocations">
+            <option value="" disabled selected>Choose a Location</option>
+            <option>Electronic City</option>
+            <option>Rajaji Nagar</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <h2>Area (Square Feet)</h2>
+        <input type="text" id="uiSqft" value="1500">
+    </div>
+
+    <div class="form-group">
+        <h2>Bath</h2>
+        <div class="switch-field">
+            <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1">
+            <label for="radio-bath-1">1</label>
+            <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked>
+            <label for="radio-bath-2">2</label>
+            <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3">
+            <label for="radio-bath-3">3</label>
+            <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4">
+            <label for="radio-bath-4">4</label>
+            <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5">
+            <label for="radio-bath-5">5</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <h2>BHK</h2>
+        <div class="switch-field">
+            <input type="radio" id="radio-bhk-1" name="uiBHK" value="1">
+            <label for="radio-bhk-1">1</label>
+            <input type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked>
+            <label for="radio-bhk-2">2</label>
+            <input type="radio" id="radio-bhk-3" name="uiBHK" value="3">
+            <label for="radio-bhk-3">3</label>
+            <input type="radio" id="radio-bhk-4" name="uiBHK" value="4">
+            <label for="radio-bhk-4">4</label>
+            <input type="radio" id="radio-bhk-5" name="uiBHK" value="5">
+            <label for="radio-bhk-5">5</label>
+        </div>
+    </div>
+
+    <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+
+    <div id="uiEstimatedPrice" class="result"><h2></h2></div>
+</div>
+
+</body>
+</html>
