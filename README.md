@@ -69,5 +69,5 @@ A machine learning-powered web application that predicts house prices based on v
 ## 📬 Contact
 
 **Ishita Garg**  
-📧 your-email@example.com  
+📧 gargishita40@gmail.com  
 📍 PEC Chandigarh | CSE (Data Science)
